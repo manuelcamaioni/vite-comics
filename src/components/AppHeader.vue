@@ -59,6 +59,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+header {
+    background-color: white;
+}
 nav {
     justify-content: space-between;
     .list-container {

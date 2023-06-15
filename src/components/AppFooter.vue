@@ -68,6 +68,7 @@
                 </div>
             </div>
         </div>
+        <div class="overlay-container"></div>
     </footer>
 </template>
 
@@ -151,17 +152,33 @@ export default {
 @use "../styles/partials/variables.scss" as *;
 footer {
     background: url("../assets/vue-dc-comics-1/img/footer-bg.jpg");
+    position: relative;
     color: white;
+    .overlay-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 500px;
+        height: 456px;
+        background: url("../assets/vue-dc-comics-1/img/dc-logo-bg.png");
+    }
     .list-container {
         margin-bottom: 1rem;
+        margin-right: 1rem;
+        li {
+            margin-bottom: 0.2rem;
+        }
     }
     h2 {
         padding: 1rem 0;
         text-transform: uppercase;
     }
+
     .extended-wrapper {
         background-color: #303030;
         padding: 2rem 0;
+        z-index: 1;
+        position: relative;
         .container {
             justify-content: space-between;
             align-items: center;
