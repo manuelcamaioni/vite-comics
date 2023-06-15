@@ -1,3 +1,4 @@
+@use "../styles/partials/variables.scss" as *;
 *{
     margin: 0;
     padding: 0;
@@ -36,4 +37,12 @@ ul{
 
 .m-auto{
     margin: auto;
+}
+
+.bg-primary{
+    background-color: $primaryColor;
+}
+
+.bg-black{
+    background-color: #1c1c1c;
 }

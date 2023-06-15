@@ -184,6 +184,8 @@ footer {
         .container {
             justify-content: space-between;
             align-items: center;
+            position: relative;
+            z-index: 1;
             button {
                 background-color: transparent;
                 color: white;
