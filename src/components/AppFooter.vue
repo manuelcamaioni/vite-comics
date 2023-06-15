@@ -169,6 +169,7 @@ footer {
         margin-right: 1rem;
         li {
             margin-bottom: 0.2rem;
+            color: rgb(180, 180, 180);
         }
     }
     h2 {
@@ -192,9 +193,10 @@ footer {
                 border: 1px solid $primaryColor;
                 text-transform: uppercase;
                 padding: 0.5rem 0.5rem;
+                font-size: 1.2rem;
             }
             li {
-                margin-left: 0.5rem;
+                margin: 0 0.6rem;
                 text-transform: uppercase;
                 color: $primaryColor;
                 img {

@@ -61,8 +61,8 @@ main {
                 justify-content: center;
                 padding: 0 1rem;
                 img {
-                    height: 60%;
-                    width: 70px;
+                    height: 40%;
+                    width: 50px;
                     object-fit: contain;
                 }
                 span {
@@ -70,6 +70,7 @@ main {
                     text-transform: uppercase;
                     text-align: center;
                     padding-left: 0.5rem;
+                    font-size: 0.9rem;
                 }
             }
         }
