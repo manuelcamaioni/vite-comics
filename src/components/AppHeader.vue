@@ -2,14 +2,24 @@
     <header>
         <div class="container">
             <nav class="d-flex">
-                <div class="img-container">
+                <div class="img-container d-flex">
                     <img
                         src="../assets/vue-dc-comics-1/img/dc-logo.png"
                         alt="" />
                 </div>
-                <div class="list-container d-flex">
-                    <ul class="d-flex">
-                        <li v-for="link in links">{{ link.name }}</li>
+                <div class="list-container d-flex h-100">
+                    <ul class="d-flex h-100">
+                        <li
+                            v-for="(link, index) in links"
+                            class="d-flex align-center"
+                            @click="active(index)"
+                            :class="activeIndex === index ? 'active' : ''">
+                            <a
+                                href="#"
+                                :class="activeIndex === index ? 'active' : ''"
+                                >{{ link.name }}</a
+                            >
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -19,38 +29,54 @@
 
 <script>
 export default {
+    methods: {
+        active(index) {
+            this.activeIndex = index;
+        },
+    },
     data() {
         return {
+            activeIndex: 0,
             links: [
                 {
                     name: "Characters",
+                    selected: false,
                 },
                 {
                     name: "Comics",
+                    selected: false,
                 },
                 {
                     name: "Movies",
+                    selected: false,
                 },
                 {
                     name: "TV",
+                    selected: false,
                 },
                 {
                     name: "Games",
+                    selected: false,
                 },
                 {
                     name: "Collectibles",
+                    selected: false,
                 },
                 {
                     name: "Videos",
+                    selected: false,
                 },
                 {
                     name: "Fans",
+                    selected: false,
                 },
                 {
                     name: "News",
+                    selected: false,
                 },
                 {
                     name: "Shop",
+                    selected: false,
                 },
             ],
         };
@@ -59,17 +85,50 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "../styles/partials/variables.scss" as *;
 header {
     background-color: white;
 }
 nav {
     justify-content: space-between;
+    align-items: center;
+    height: 103px;
+    .img-container {
+        height: 100%;
+        align-items: center;
+        img {
+            height: 80%;
+            display: block;
+        }
+    }
     .list-container {
         align-items: center;
         ul {
             li {
                 margin: 0.5rem 0.75rem;
                 text-transform: uppercase;
+                margin: 0;
+                margin-left: 1rem;
+                position: relative;
+                a.active {
+                    color: $primaryColor;
+                }
+                &.active::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    top: 93%;
+                    left: 0;
+                    right: 0;
+                    background-color: $primaryColor;
+                }
+                a {
+                    color: black;
+                    text-decoration: none;
+                    &:hover {
+                        color: $primaryColor;
+                    }
+                }
             }
         }
     }

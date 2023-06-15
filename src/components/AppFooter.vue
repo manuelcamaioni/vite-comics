@@ -151,16 +151,18 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/partials/variables.scss" as *;
 footer {
-    background: url("../assets/vue-dc-comics-1/img/footer-bg.jpg");
+    background: url("../assets/vue-dc-comics-1/img/footer-bg.jpg") no-repeat;
+    background-size: cover;
     position: relative;
     color: white;
     .overlay-container {
         position: absolute;
         top: 0;
-        right: 0;
-        width: 500px;
+        right: 20%;
+        width: 700px;
         height: 456px;
-        background: url("../assets/vue-dc-comics-1/img/dc-logo-bg.png");
+        background: url("../assets/vue-dc-comics-1/img/dc-logo-bg.png")
+            no-repeat;
     }
     .list-container {
         margin-bottom: 1rem;
