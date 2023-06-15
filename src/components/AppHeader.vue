@@ -40,43 +40,33 @@ export default {
             links: [
                 {
                     name: "Characters",
-                    selected: false,
                 },
                 {
                     name: "Comics",
-                    selected: false,
                 },
                 {
                     name: "Movies",
-                    selected: false,
                 },
                 {
                     name: "TV",
-                    selected: false,
                 },
                 {
                     name: "Games",
-                    selected: false,
                 },
                 {
                     name: "Collectibles",
-                    selected: false,
                 },
                 {
                     name: "Videos",
-                    selected: false,
                 },
                 {
                     name: "Fans",
-                    selected: false,
                 },
                 {
                     name: "News",
-                    selected: false,
                 },
                 {
                     name: "Shop",
-                    selected: false,
                 },
             ],
         };
