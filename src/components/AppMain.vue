@@ -1,6 +1,7 @@
 <template>
     <main>
         <div class="extended-wrapper bg-black">
+            <div class="jumbo-container"></div>
             <div class="container">
                 <h1>--> Content goes here &lt;--</h1>
             </div>
@@ -54,6 +55,12 @@ export default {
 main {
     .extended-wrapper {
         width: 100%;
+        .jumbo-container {
+            height: 500px;
+            width: 100%;
+            background: url("../assets/vue-dc-comics-1/img/jumbotron.jpg");
+        }
+
         .items {
             justify-content: space-evenly;
             .item-container {

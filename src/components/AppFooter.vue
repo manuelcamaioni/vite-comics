@@ -4,28 +4,31 @@
             <div class="list-container">
                 <h2>Dc Comics</h2>
                 <ul>
-                    <li v-for="link in links">{{ link.name }}</li>
+                    <li v-for="element in comicList">
+                        <a href="#">{{ element.name }}</a>
+                    </li>
                 </ul>
                 <h2>Shop</h2>
                 <ul>
-                    <li>Shop DC</li>
-                    <li>Shop DC Collectibles</li>
+                    <li v-for="element in shopList">
+                        <a href="#">{{ element.name }}</a>
+                    </li>
                 </ul>
             </div>
             <div class="list-container">
                 <h2>DC</h2>
                 <ul>
-                    <li v-for="element in DClist">{{ element.name }}</li>
+                    <li v-for="element in DClist">
+                        <a href="#">{{ element.name }}</a>
+                    </li>
                 </ul>
             </div>
             <div class="list-container">
                 <h2>Sites</h2>
                 <ul>
-                    <li>DC</li>
-                    <li>MAD Magazines</li>
-                    <li>DC Kids</li>
-                    <li>DC Universe</li>
-                    <li>DC Power Visa</li>
+                    <li v-for="element in sitesList">
+                        <a href="#">{{ element.name }}</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -39,30 +42,10 @@
                         <li class="d-flex align-center">
                             <span>Follow us</span>
                         </li>
-                        <li class="d-flex align-center">
-                            <img
-                                src="../assets/vue-dc-comics-1/img/footer-facebook.png"
-                                alt="" />
-                        </li>
-                        <li class="d-flex align-center">
-                            <img
-                                src="../assets/vue-dc-comics-1/img/footer-periscope.png"
-                                alt="" />
-                        </li>
-                        <li class="d-flex align-center">
-                            <img
-                                src="../assets/vue-dc-comics-1/img/footer-pinterest.png"
-                                alt="" />
-                        </li>
-                        <li class="d-flex align-center">
-                            <img
-                                src="../assets/vue-dc-comics-1/img/footer-twitter.png"
-                                alt="" />
-                        </li>
-                        <li class="d-flex align-center">
-                            <img
-                                src="../assets/vue-dc-comics-1/img/footer-youtube.png"
-                                alt="" />
+                        <li
+                            v-for="img in footerIconsList"
+                            class="d-flex align-center">
+                            <img :src="getImagePath(img.name)" alt="" />
                         </li>
                     </ul>
                 </div>
@@ -74,9 +57,17 @@
 
 <script>
 export default {
+    methods: {
+        getImagePath: function (img) {
+            return new URL(
+                `../assets/vue-dc-comics-1/img/${img}`,
+                import.meta.url
+            ).href;
+        },
+    },
     data() {
         return {
-            links: [
+            comicList: [
                 {
                     name: "Characters",
                 },
@@ -143,6 +134,48 @@ export default {
                     name: "Contact us",
                 },
             ],
+            shopList: [
+                {
+                    name: "Shop DC",
+                },
+                {
+                    name: "Shop DC Collectibles",
+                },
+            ],
+            sitesList: [
+                {
+                    name: "DC",
+                },
+                {
+                    name: "MAD Magazines",
+                },
+                {
+                    name: "DC Kids",
+                },
+                {
+                    name: "DC Universe",
+                },
+                {
+                    name: "DC Power Visa",
+                },
+            ],
+            footerIconsList: [
+                {
+                    name: "footer-facebook.png",
+                },
+                {
+                    name: "footer-periscope.png",
+                },
+                {
+                    name: "footer-pinterest.png",
+                },
+                {
+                    name: "footer-twitter.png",
+                },
+                {
+                    name: "footer-youtube.png",
+                },
+            ],
         };
     },
 };
@@ -169,7 +202,16 @@ footer {
         margin-right: 1rem;
         li {
             margin-bottom: 0.2rem;
-            color: rgb(180, 180, 180);
+
+            a {
+                color: rgb(180, 180, 180);
+                text-decoration: none;
+                &:hover {
+                    color: white;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
         }
     }
     h2 {
@@ -201,6 +243,11 @@ footer {
                 color: $primaryColor;
                 img {
                     width: 70%;
+                    transition: scale 0.2s ease-out;
+                    &:hover {
+                        filter: invert(1);
+                        scale: 1.3;
+                    }
                 }
             }
         }
