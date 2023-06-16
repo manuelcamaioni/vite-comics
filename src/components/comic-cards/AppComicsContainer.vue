@@ -3,7 +3,7 @@
         <h2 class="info-comics">Current Series</h2>
         <ComicCard v-for="cardData in comicCards" :propDataCard="cardData" />
 
-        <button>Load More</button>
+        <button><a href="#">Load More</a></button>
     </section>
 </template>
 

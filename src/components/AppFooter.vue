@@ -35,7 +35,7 @@
         <div class="w-100 extended-wrapper">
             <div class="container d-flex">
                 <div class="container-button">
-                    <button>Sign-up now!</button>
+                    <button><a href="#">Sign-up now!</a></button>
                 </div>
                 <div class="media-list">
                     <ul class="d-flex">
