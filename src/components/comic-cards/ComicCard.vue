@@ -3,8 +3,11 @@
         <div class="img-container">
             <img :src="propDataCard.thumb" alt="" />
             <div class="overlay"></div>
-            <span class="price">{{ propDataCard.price }}</span>
-            <span class="type-book">{{ propDataCard.type }}</span>
+            <div class="info-box">
+                <span class="price">{{ propDataCard.price }}</span>
+                <span class="type-book">{{ propDataCard.type }}</span>
+            </div>
+            <div class="abs-container"></div>
         </div>
         <h3 class="title">{{ propDataCard.series }}</h3>
     </div>
@@ -58,36 +61,48 @@ div.overlay {
 div.card:hover div.overlay {
     opacity: 0;
 }
-.img-container .price {
+
+div.info-box {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
 
-    background-color: rgb(250, 106, 54);
-    border-radius: 0.5rem;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.price,
+.type-book {
     opacity: 0;
-    padding: 0.1rem 0.5rem;
-    transition: opacity 0.5s ease-out;
-}
-.img-container:hover .price {
-    display: block;
-    opacity: 1;
+
+    padding: 0 0.3rem;
 }
 
-.img-container .type-book {
+.type-book {
+    text-transform: capitalize;
+}
+
+.abs-container {
     position: absolute;
-    top: 30px;
-    right: 5px;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 50px;
+    background-color: orangered;
 
-    background-color: rgb(250, 106, 54);
-    border-radius: 0.5rem;
-    opacity: 0;
-    padding: 0.1rem 0.5rem;
-    transition: opacity 0.5s ease-out;
+    transition: width 1.2s;
 }
 
-.img-container:hover .type-book {
-    display: block;
+div.card:hover .abs-container {
+    width: 100%;
+}
+
+div.card:hover .price,
+div.card:hover .type-book {
     opacity: 1;
+    transition: opacity 2s;
 }
 </style>
