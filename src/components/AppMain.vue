@@ -76,6 +76,7 @@ main {
                     height: 40%;
                     width: 50px;
                     object-fit: contain;
+                    position: relative;
                 }
                 span {
                     color: white;
@@ -83,6 +84,10 @@ main {
                     text-align: center;
                     padding-left: 0.5rem;
                     font-size: 0.9rem;
+                    &:hover {
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
                 }
             }
         }

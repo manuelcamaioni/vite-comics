@@ -190,8 +190,8 @@ footer {
     color: white;
     .overlay-container {
         position: absolute;
-        top: 0;
-        right: 20%;
+        top: -45px;
+        right: 5%;
         width: 700px;
         height: 456px;
         background: url("../assets/vue-dc-comics-1/img/dc-logo-bg.png")
