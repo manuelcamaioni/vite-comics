@@ -3,7 +3,7 @@
         <div class="extended-wrapper bg-black">
             <div class="jumbo-container"></div>
             <div class="container">
-                <h1>--> Content goes here &lt;--</h1>
+                <AppComicsContainer />
             </div>
             <div class="extended-wrapper bg-primary">
                 <div class="container d-flex items">
@@ -44,7 +44,12 @@
 </template>
 
 <script>
+import AppComicsContainer from "./comic-cards/AppComicsContainer.vue";
+
 export default {
+    components: {
+        AppComicsContainer,
+    },
     data() {
         return {};
     },
