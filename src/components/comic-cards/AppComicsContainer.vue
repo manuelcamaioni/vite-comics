@@ -1,6 +1,9 @@
 <template>
     <section>
+        <h2 class="info-comics">Current Series</h2>
         <ComicCard v-for="cardData in comicCards" :propDataCard="cardData" />
+
+        <button>Load More</button>
     </section>
 </template>
 
@@ -92,8 +95,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "../../styles/partials/variables.scss" as *;
 section {
+    position: relative;
+
     width: 100%;
-    border: 2px solid magenta;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 2rem 0;
+    h2 {
+        position: absolute;
+        top: -27px;
+        left: 40px;
+
+        background-color: $primaryColor;
+        color: white;
+        text-transform: uppercase;
+        padding: 0.7rem;
+    }
+    button {
+        margin: 0 auto;
+        background-color: $primaryColor;
+        color: white;
+        text-transform: uppercase;
+        border: none;
+        padding: 0.8rem 2rem;
+        font-weight: bold;
+    }
 }
 </style>
