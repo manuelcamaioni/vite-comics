@@ -58,6 +58,7 @@ export default {
 
 <style lang="scss" scoped>
 main {
+    width: 100%;
     .extended-wrapper {
         width: 100%;
         .jumbo-container {
